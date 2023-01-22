@@ -22,4 +22,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: git clone git@github.com:Dryzon13/cmsc389T-winter23.git
+          script: |
+            git clone git@github.com:Dryzon13/cmsc389T-winter23.git
