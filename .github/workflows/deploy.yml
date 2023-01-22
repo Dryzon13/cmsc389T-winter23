@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+
+name: deploy workflow
+
+# Controls when the workflow will run
+on:
+  push:
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: testing
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd cmsc389T-winter23
+            git pull
